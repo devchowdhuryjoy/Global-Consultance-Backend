@@ -2,8 +2,14 @@ const express = require('express');
 const router = require('./src/routes/api');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+}));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
